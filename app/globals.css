@@ -1,0 +1,156 @@
+/* Import fonts - must be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-900 text-gray-100 font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-neon-orange/30 text-white;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neon-orange/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neon-orange;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Neon text effect */
+  .text-neon {
+    @apply text-neon-orange;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5),
+                 0 0 20px rgba(255, 107, 53, 0.3),
+                 0 0 30px rgba(255, 107, 53, 0.2);
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-neon-orange to-neon-blue;
+  }
+
+  /* Neon border */
+  .border-neon {
+    @apply border border-neon-orange/50;
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.3),
+                inset 0 0 10px rgba(255, 107, 53, 0.1);
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-dark-800/80 backdrop-blur-md border border-white/10;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-neon-orange text-white font-semibold rounded-lg
+           hover:bg-neon-orange-light transition-all duration-300
+           shadow-neon hover:shadow-neon-lg;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-transparent border-2 border-neon-orange text-neon-orange
+           font-semibold rounded-lg hover:bg-neon-orange/10 transition-all duration-300;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 text-gray-300 hover:text-neon-orange transition-colors duration-300;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-dark-800/50 backdrop-blur-sm rounded-xl border border-white/5
+           hover:border-neon-orange/30 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:transform hover:-translate-y-1 hover:shadow-neon;
+  }
+
+  /* Input styles */
+  .input {
+    @apply w-full px-4 py-3 bg-dark-700 border border-white/10 rounded-lg
+           text-white placeholder-gray-500 focus:outline-none focus:border-neon-orange
+           focus:ring-1 focus:ring-neon-orange/50 transition-all duration-300;
+  }
+
+  /* Section styles */
+  .section {
+    @apply py-20 px-4 md:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gray-400 max-w-2xl;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  /* Animate on scroll */
+  .animate-on-scroll {
+    @apply opacity-0 translate-y-8 transition-all duration-700;
+  }
+
+  .animate-on-scroll.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Cursor trail effect container */
+  .cursor-trail {
+    @apply pointer-events-none fixed w-4 h-4 rounded-full bg-neon-orange/50 blur-sm;
+    z-index: 9999;
+  }
+}
+
+/* React Calendar custom styles */
+.react-calendar {
+  @apply bg-dark-800 border border-white/10 rounded-xl p-4 w-full;
+  font-family: inherit;
+}
+
+.react-calendar__navigation button {
+  @apply text-white hover:bg-neon-orange/20 rounded-lg min-w-[44px];
+}
+
+.react-calendar__month-view__weekdays {
+  @apply text-gray-400 text-sm;
+}
+
+.react-calendar__tile {
+  @apply text-white hover:bg-neon-orange/20 rounded-lg;
+}
+
+.react-calendar__tile--active {
+  @apply bg-neon-orange hover:bg-neon-orange-light;
+}
+
+.react-calendar__tile--now {
+  @apply bg-navy-700;
+}

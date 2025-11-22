@@ -26,13 +26,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4">
+            <Link href="/" className="flex items-center gap-3 mb-4" aria-label={`${COMPANY.name} - Home`}>
               <Logo className="w-12 h-12" />
               <div>
                 <span className="font-display font-bold text-lg text-white block">
                   {COMPANY.name}
                 </span>
-                <span className="text-xs text-gray-500">{COMPANY.tagline}</span>
+                <span className="text-xs text-gray-400">{COMPANY.tagline}</span>
               </div>
             </Link>
             <p className="text-sm text-gray-400 mb-4">
@@ -147,19 +147,19 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-400">
             © {currentYear} {COMPANY.name}. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
               href="/privacy"
-              className="text-sm text-gray-500 hover:text-neon-orange transition-colors"
+              className="text-sm text-gray-400 hover:text-neon-orange transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-sm text-gray-500 hover:text-neon-orange transition-colors"
+              className="text-sm text-gray-400 hover:text-neon-orange transition-colors"
             >
               Terms of Service
             </Link>

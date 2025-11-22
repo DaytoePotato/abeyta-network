@@ -53,16 +53,11 @@ export function Hero() {
             </motion.span>
           </h1>
 
-          {/* Subheadline */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto"
-          >
+          {/* Subheadline - No delay for better LCP */}
+          <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
             From WiFi Optimization to Managed Networks – Quality You Can Trust.
             Military-grade reliability for homes and businesses in Central Texas.
-          </motion.p>
+          </p>
 
           {/* CTA Buttons */}
           <motion.div
@@ -84,7 +79,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.6 }}
-            className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-gray-500"
+            className="mt-16 flex flex-wrap justify-center gap-8 text-sm text-gray-400"
           >
             <div className="flex items-center gap-2">
               <span className="text-neon-orange">★</span>

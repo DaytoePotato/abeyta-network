@@ -41,7 +41,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3" aria-label={`${COMPANY.name} - Home`}>
             <Logo className="w-10 h-10" />
             <div className="hidden sm:block">
               <span className="font-display font-bold text-lg text-white">

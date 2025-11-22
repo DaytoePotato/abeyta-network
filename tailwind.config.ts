@@ -20,7 +20,7 @@ const config: Config = {
         neon: {
           orange: '#ff6b35',
           'orange-light': '#ff8c5a',
-          'orange-dark': '#e55a2b',
+          'orange-dark': '#c44d20', // Darker for WCAG AA contrast with white text
           blue: '#00d4ff',
           purple: '#8b5cf6',
           pink: '#f472b6',
@@ -34,9 +34,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Orbitron', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-orbitron)', 'sans-serif'],
+        mono: ['var(--font-jetbrains-mono)', 'monospace'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Suspense } from 'react';
 import { QueryProvider } from '@/components/providers/query-provider';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { CursorTrail } from '@/components/ui/cursor-trail';
 import { SEO_KEYWORDS, COMPANY } from '@/lib/constants';
+import { inter, orbitron, jetbrainsMono } from '@/lib/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://abeyta.org'),
   title: {
     default: `${COMPANY.name} | Veteran-Led Tech Support in Killeen/Temple TX`,
     template: `%s | ${COMPANY.name}`,
@@ -19,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://abeytanetwork.com',
+    url: 'https://abeyta.org',
     siteName: COMPANY.name,
     title: `${COMPANY.name} | Veteran-Led Tech Support`,
     description: 'Expert tech support in Central Texas. WiFi optimization, managed IT, network installations. Veteran-owned with 24/7 support.',
@@ -48,7 +51,7 @@ export const metadata: Metadata = {
       '@type': 'LocalBusiness',
       name: COMPANY.name,
       description: 'Veteran-led tech support serving Killeen, Temple, and Central Texas',
-      url: 'https://abeytanetwork.com',
+      url: 'https://abeyta.org',
       telephone: COMPANY.phone,
       email: COMPANY.email,
       address: {
@@ -76,8 +79,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${orbitron.variable} ${jetbrainsMono.variable} scroll-smooth`} suppressHydrationWarning>
       <body className="min-h-screen flex flex-col">
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="lfyvENOA6yytObWSS1/13Q"
+          strategy="afterInteractive"
+        />
         <QueryProvider>
           <Suspense fallback={null}>
             <CursorTrail />
